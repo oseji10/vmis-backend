@@ -1,0 +1,29 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Patient {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  gender: String!
+  dob: DateTime!
+  phone: String!
+  email: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getAllPatients: [Patient!]!
+  getPatientById(id: String!): Patient
+}
+
+type Mutation {
+  createPatient(firstName: String!, lastName: String!, gender: String!, dob: DateTime!, phone: String!, email: String!): Patient!
+  updatePatient(id: String!, firstName: String, lastName: String, gender: String, dob: DateTime, phone: String, email: String): Patient
+  deletePatient(id: String!): Boolean!
+}
